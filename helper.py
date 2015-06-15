@@ -1,3 +1,5 @@
+import cgi
+
 months = ['January',
           'February',
           'March',
@@ -12,6 +14,9 @@ months = ['January',
           'December']
 
 month_abbvs = dict((m[:3].lower(), m) for m in months)
+
+def escape_html(s):
+	return cgi.escape(s, quote = True)
 
 def valid_month(month):
 	if month:
